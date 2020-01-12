@@ -1,4 +1,5 @@
 var kecamatan = [
+    "",
     "Bukit Raya",
     "Lima Puluh",
     "Marpoyan Damai",
@@ -28,16 +29,25 @@ $(document).ready(async () => {
 
     await handle_on_click()
     await submit()
+
+    await $("#district").select2({
+        placeholder: "Select a state",
+        allowClear: true,
+        data: kecamatan
+    })
+    // await make_combobox(kecamatan)
+
 })
 
 const make_chekcbox = async (kecamatan) => {
     kecamatan.map((k, i) => {
-        document.getElementById("kecamatan").innerHTML += `<input type='checkbox' index=${i} class='form-check-input kec' value='${k}'/>${k} <br/>`
+        if (k !== "") document.getElementById("kecamatan").innerHTML += `<input type='checkbox' index=${i} class='form-check-input kec' value='${k}' checked disabled />${k} <br/>`
     })
 
     await handle_checkboxAll()
     await handle_checkBox()
 }
+
 
 
 
@@ -93,9 +103,13 @@ const get_marker = async () => {
     // console.log(data)
     data.map((d, i) => {
         var coordinates = d.geometry.coordinates
-        marker = L.marker([coordinates[1], coordinates[0]]).addTo(mymap)
+        var properties = d.properties
+        console.log(properties.Foto)
+        marker = L.marker([coordinates[1], coordinates[0]]).bindPopup(`<b>${properties.Nama_Toko}</b><br/> <img src='http://localhost:5500/backend/temp_directories/${properties.Foto}' width='100px' /> `).addTo(mymap)
         m.push(marker)
     })
+
+    mymap.setView([data[0].geometry.coordinates[1], data[0].geometry.coordinates[0]])
 }
 
 const get_data_marker = async () => {
@@ -106,7 +120,6 @@ const get_data_marker = async () => {
             // console.log(e)
             mymap.removeLayer(e)
         })
-        alert("Nol")
         return []
     }
     else {
@@ -129,10 +142,11 @@ const get_data_marker = async () => {
         const data = res.data
         return data
     }
-
 }
 
+
 const handle_on_click = () => {
+
     mymap.on("click", async e => {
         const value = e.latlng
         $("#y").val(value.lat)
@@ -167,14 +181,14 @@ const submit = () => {
                 processData: false,
                 contentType: false,
                 success: res => {
-                    // console.log(res)
+                    alert("Tambah Marker Berhasil !")
                 }
             })
 
-            alert()
+
         }
         else {
-            alert("Belum Lengkap")
+            alert("Data Belum Lengkap")
         }
 
     })
