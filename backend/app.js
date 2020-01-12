@@ -22,7 +22,12 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+
+
+
 app.use('/coordinates', coordinateRoutes)
+
+// app.use('/temp_directories', express.static('temp_directories/'))
 
 
 module.exports = app;

@@ -17,8 +17,26 @@ exports.coordinateListByKec = async (req, res) => {
         }
     }])
 
-    console.log(data)
+    // console.log(data)
     return res.status(200).json({
+        data
+    })
+}
+
+exports.coordinateSearch = async (req, res) => {
+    var body = await req.body.search
+    body = body.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+
+    const data = await Coordinate.find({
+        'properties.Nama_Toko': {
+            $regex: new RegExp(body)
+        }
+    })
+
+    // console.log(body)
+    res.status(200).json({
+        message: "OK",
+        count: data.length,
         data
     })
 }
@@ -37,7 +55,7 @@ exports.coordinateAdd = async (req, res) => {
             properties: {
                 OBJECTID: mongoose.Types.ObjectId(),
                 No_: parseInt(Math.random() * 1000),
-                Nama_Toko: body.nama,
+                Nama_Toko: body.nama.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); }),
                 Alamat: body.alamat,
                 X: parseFloat(body.x),
                 Y: parseFloat(body.y),
@@ -45,7 +63,7 @@ exports.coordinateAdd = async (req, res) => {
             }
         })
 
-        console.log(newCoordinate)
+        // console.log(newCoordinate)
 
         await newCoordinate.save()
 
