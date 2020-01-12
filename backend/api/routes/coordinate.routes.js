@@ -4,7 +4,6 @@ const express = require('express'),
 
 
 const {
-    coordinateList,
     coordinateListByKec,
     coordinateAdd
 } = require('./../controllers/coordinate.controllers')
@@ -21,7 +20,6 @@ const storage = multer.diskStorage({
 })
 var upload = multer({ storage: storage })
 
-router.get('/', coordinateList)
 router.post('/', coordinateListByKec)
 router.post('/add', upload.single("foto"), coordinateAdd)
 

@@ -3,23 +3,6 @@ const
 
 const Coordinate = require('./../models/coordinate.models');
 
-exports.coordinateList = async (req, res) => {
-    const data = await Coordinate.find()
-    const dataJson = {
-        type: "FeatureCollection",
-        crs: {
-            type: "name",
-            properties: {
-                name: "EPSG:4326"
-            }
-        },
-        features: data
-    }
-
-    const string = JSON.stringify(dataJson)
-    return res.status(200).json([])
-}
-
 exports.coordinateListByKec = async (req, res) => {
     var kec = await req.body['data[]']
     if (!Array.isArray(kec)) {
