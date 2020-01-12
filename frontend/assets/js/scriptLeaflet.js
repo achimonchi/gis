@@ -22,7 +22,7 @@ $(document).ready(async () => {
 
     await make_chekcbox(kecamatan)
 
-    console.log(val)
+    // console.log(val)
     await make_map(val)
     await get_data_kec()
 
@@ -90,7 +90,7 @@ const make_map = async () => {
 const get_marker = async () => {
 
     const data = await get_data_marker()
-    console.log(data)
+    // console.log(data)
     data.map((d, i) => {
         var coordinates = d.geometry.coordinates
         marker = L.marker([coordinates[1], coordinates[0]]).addTo(mymap)
@@ -99,11 +99,11 @@ const get_marker = async () => {
 }
 
 const get_data_marker = async () => {
-    console.log("From get_data_marker")
-    console.log(val)
+    // console.log("From get_data_marker")
+    // console.log(val)
     if (val.length === 0) {
         m.map((e) => {
-            console.log(e)
+            // console.log(e)
             mymap.removeLayer(e)
         })
         alert("Nol")
@@ -116,11 +116,11 @@ const get_data_marker = async () => {
         }
 
         m.map((e) => {
-            console.log(e)
+            // console.log(e)
             mymap.removeLayer(e)
         })
 
-        console.log(kecamatan)
+        // console.log(kecamatan)
         const res = await $.ajax({
             type: "POST",
             url: `http://localhost:4000/coordinates/`,
@@ -137,7 +137,7 @@ const handle_on_click = () => {
         const value = e.latlng
         $("#y").val(value.lat)
         $("#x").val(value.lng)
-        console.log(value)
+        // console.log(value)
     })
 }
 
@@ -145,7 +145,7 @@ const submit = () => {
 
     $("#btn-submit").on("click", async e => {
         const data = await validation()
-        console.log(data)
+        // console.log(data)
         if (data.flag) {
             $("#btn-submit").addClass("btn-outline-primary")
             $("#btn-submit").attr("disabled", true)
@@ -158,7 +158,7 @@ const submit = () => {
             await formData.append("nama", data.nama)
             await formData.append("alamat", data.alamat)
             await formData.append("kec", data.kec)
-            await console.log(formData)
+            // await console.log(formData)
 
             await $.ajax({
                 type: "POST",
@@ -167,7 +167,7 @@ const submit = () => {
                 processData: false,
                 contentType: false,
                 success: res => {
-                    console.log(res)
+                    // console.log(res)
                 }
             })
 
@@ -182,7 +182,7 @@ const submit = () => {
 
 const handle_foto = async () => {
     $("#foto").change(() => {
-        console.log()
+        // console.log()
     })
 }
 
