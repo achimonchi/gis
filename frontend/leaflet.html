@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+    <style>
+        #mapid {
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <form id="form-add" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md">
+                            <h3 class="text-center">Form Input Data</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="x">X</label>
+                            <input type="text" id="x" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="y">Y</label>
+                            <input type="text" id="y" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="name">Nama Toko</label>
+                            <input type="text" id="nama" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="alamat">Alamat Toko</label>
+                            <input type="text" id="alamat" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="district">Kecamatan</label>
+                            <input type="type" class="form-control" id="district" name="kecamatan">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="foto">Foto</label>
+                            <input type="file" id="foto" name="temp_foto">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <img src="" id="imgPreview" alt="" height="200px">
+                        </div>
+                        <div class="col-md">
+                            <input id="btn-submit" type="button" value="Kirim" class="btn btn-block btn-primary">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="mapid"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-check">
+                    <input type="checkbox" checked class="form-check-input kec-all" id="kec-all" value="all">All
+                    <br>
+                    <div id="kecamatan">
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/js//scriptLeaflet.js"></script>
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgPreview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#foto").change(function () {
+            readURL(this);
+        });
+    </script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <form id="form-add" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md">
+                            <h3 class="text-center">Form Input Data</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="x">X</label>
+                            <input type="text" id="x" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="y">Y</label>
+                            <input type="text" id="y" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="name">Nama Toko</label>
+                            <input type="text" id="nama" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="alamat">Alamat Toko</label>
+                            <input type="text" id="alamat" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="district">Kecamatan</label>
+                            <input type="type" class="form-control" id="district" name="kecamatan">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="foto">Foto</label>
+                            <input type="file" id="foto" name="temp_foto">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <img src="" id="imgPreview" alt="" height="200px">
+                        </div>
+                        <div class="col-md">
+                            <input id="btn-submit" type="button" value="Kirim" class="btn btn-block btn-primary">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/scriptOl.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#imgPreview').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#foto").change(function () {
+                readURL(this);
+            });
+
+
+            $("#btn-submit").on('click', e => {
+
+
+                var files = document.getElementById("foto").files
+                var formData = new FormData();
+                var x = parseFloat(document.getElementById("x").value);
+                var y = parseFloat(document.getElementById("y").value);
+                var nama = document.getElementById("nama").value;
+                var alamat = document.getElementById("alamat").value;
+
+                formData.append("foto", files[0]);
+
+                formData.append("x", x);
+                formData.append("y", y);
+                formData.append("nama", nama)
+                formData.append("alamat", alamat)
+
+                console.log(formData)
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:4000/coordinates/add",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: res => {
+                        alert("success")
+                    },
+                    error: err => {
+
+                    }
+                })
+
+                // e.preventDefault()
+
+            })
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>
