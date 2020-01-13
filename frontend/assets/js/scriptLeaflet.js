@@ -30,11 +30,8 @@ $(document).ready(async () => {
     await handle_on_click()
     await submit()
 
-    await $("#district").select2({
-        placeholder: "Select a state",
-        allowClear: true,
-        data: kecamatan
-    })
+    await make_select2()
+
     // await make_combobox(kecamatan)
 
 })
@@ -46,6 +43,20 @@ const make_chekcbox = async (kecamatan) => {
 
     await handle_checkboxAll()
     await handle_checkBox()
+}
+
+const make_select2 = () => {
+    $("#district").select2({
+        placeholder: "Select a state",
+        allowClear: true,
+        data: kecamatan
+    })
+
+    $(".select2").addClass("form-control")
+    $(".select2-selection").css({
+        border: "0px"
+    })
+
 }
 
 
@@ -62,6 +73,22 @@ const handle_checkBox = () => {
         }
         get_data_kec()
     })
+}
+
+var temp_marker = L.marker();
+
+const add_temp_marker = async (coor) => {
+    var greenIcon = await new L.Icon({
+        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+    await mymap.removeLayer(temp_marker)
+    temp_marker = await L.marker([coor.lat, coor.lng], { icon: greenIcon }).bindPopup("<b>Bengkel Baru ?</b>").addTo(mymap).openPopup()
+
 }
 
 const get_data_kec = () => {
@@ -152,6 +179,7 @@ const handle_on_click = () => {
         $("#y").val(value.lat)
         $("#x").val(value.lng)
         // console.log(value)
+        add_temp_marker(value)
     })
 }
 
