@@ -3,6 +3,8 @@ const
 
 const Coordinate = require('./../models/coordinate.models');
 
+
+
 exports.coordinateListByKec = async (req, res) => {
     var kec = await req.body['data[]']
     if (!Array.isArray(kec)) {
@@ -25,16 +27,31 @@ exports.coordinateListByKec = async (req, res) => {
 
 exports.coordinateSearch = async (req, res) => {
     var body = await req.body.search
-    body = body.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+    if (!Array.isArray(body)) {
+        body = body.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+    }
+    else {
+        body.map((b, i) => {
+            body[i] = b.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); })
+        })
+    }
 
-    const data = await Coordinate.find({
-        'properties.Nama_Toko': {
-            $regex: new RegExp(body)
-        }
+
+    var data = []
+
+    body.map(async (b, i) => {
+        const d = await Coordinate.find({
+            'properties.Nama_Toko': {
+                $regex: new RegExp(b)
+            }
+        })
+
+        await data.push(d)
     })
 
-    // console.log(body)
-    res.status(200).json({
+    await console.log(data)
+
+    await res.status(200).json({
         message: "OK",
         count: data.length,
         data

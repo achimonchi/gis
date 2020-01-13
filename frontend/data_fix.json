@@ -1,0 +1,791 @@
+{
+  "type" : "FeatureCollection",
+  "crs" : {
+    "type" : "name",
+    "properties" : {
+      "name" : "EPSG:4326"
+    }
+  },
+  "features" : [
+    {
+      "type" : "Feature",
+      "id" : 1,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44724200000007,
+          0.57058000000006359
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 1,
+        "No_" : 1,
+        "Nama_Toko" : "Tambal Ban 01",
+        "Alamat" : "Jalan Sembilang, Lembah Sari, Rumbai Pesisir,Pekanbaru, Riau",
+        "Y" : 101.447242,
+        "X" : 0.57057999999999998,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto1.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 2,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44732500000003,
+          0.57055900000005977
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 2,
+        "No_" : 2,
+        "Nama_Toko" : "Tambal Ban 02",
+        "Alamat" : "Jalan Sembilang,Lembah Sari, Rumbai Pesisir,Pekanbaru,Riau",
+        "Y" : 101.44732500000001,
+        "X" : 0.57055900000000004,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto2.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 3,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44737900000007,
+          0.57002600000004122
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 3,
+        "No_" : 3,
+        "Nama_Toko" : "Tambal Ban 03",
+        "Alamat" : "Jalan Sembilang, Lembah Sari, Rumbai Pesisir,Pekanbaru,Riau",
+        "Y" : 101.447379,
+        "X" : 0.57002600000000003,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto3.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 4,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44747000000007,
+          0.56981200000006993
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 4,
+        "No_" : 4,
+        "Nama_Toko" : "Tambal Ban 04",
+        "Alamat" : "Jalan Sembilang, Lembah Sari, Rumbai Pesisir,Pekanbaru, Riau",
+        "Y" : 101.44747,
+        "X" : 0.56981199999999999,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto4.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 5,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44959500000004,
+          0.56069200000007413
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 5,
+        "No_" : 5,
+        "Nama_Toko" : "Tambal Ban 05",
+        "Alamat" : "Jalan Sembilang N0.109, Limbungan Baru, Rumbai Pesisir,Pekanbaru, Riau",
+        "Y" : 101.449595,
+        "X" : 0.56069199999999997,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto5.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 6,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44957300000004,
+          0.56072400000005018
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 6,
+        "No_" : 6,
+        "Nama_Toko" : "Tambal Ban 06",
+        "Alamat" : "Jl. Sembilang, Limbungan, Rumbai Pesisir, Pekanbaru, Riau",
+        "Y" : 101.449573,
+        "X" : 0.560724,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto6.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 7,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44927800000005,
+          0.56097000000005437
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 7,
+        "No_" : 7,
+        "Nama_Toko" : "Tambal Ban 07",
+        "Alamat" : "Jl. Sembilang, Limbungan, Rumbai Pesisir, Pekanbaru, Riau",
+        "Y" : 101.44927800000001,
+        "X" : 0.56096999999999997,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto7.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 8,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44970700000005,
+          0.56004400000006171
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 8,
+        "No_" : 8,
+        "Nama_Toko" : "Ari Motor",
+        "Alamat" : "Jl. Sembilang, Limbungan, Rumbai Pesisir, Pekanbaru,Riau",
+        "Y" : 101.449707,
+        "X" : 0.56004399999999999,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto8.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 9,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.39791700000006,
+          0.58331800000001977
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 9,
+        "No_" : 9,
+        "Nama_Toko" : "Tambal Ban 09",
+        "Alamat" : "Jalan Palas Mekar, Umban Sari, Pekanbaru, Riau",
+        "Y" : 101.39791700000001,
+        "X" : 0.583318,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto9.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 10,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.39729000000005,
+          0.58121700000003784
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 10,
+        "No_" : 10,
+        "Nama_Toko" : "Tambal Ban 10",
+        "Alamat" : "Jalan Siak 2, KM12, Palas, Sri Meranti, Rumbai, Pekanbaru, Riau",
+        "Y" : 101.39729,
+        "X" : 0.58121699999999998,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto10.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 12,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.45216400000004,
+          0.54141000000004169
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 12,
+        "No_" : 12,
+        "Nama_Toko" : "Tambal Ban Bersaudara",
+        "Alamat" : "Jalan Pemudi No 3, Payung Sekaki, Tirta Siak, Pekanbaru, Riau",
+        "Y" : 101.452164,
+        "X" : 0.54140999999999995,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto12.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 13,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.41237000000007,
+          0.53749900000002526
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 13,
+        "No_" : 13,
+        "Nama_Toko" : "Tambal Ban 13",
+        "Alamat" : "Jalan Wakaf,Kampung Bandar, Senapelan, Pekanbaru Riau",
+        "Y" : 101.41237,
+        "X" : 0.53749899999999995,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto13.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 14,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.43748500000004,
+          0.53060200000004443
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 14,
+        "No_" : 14,
+        "Nama_Toko" : "Tambal Ban Mobil Dan Motor Tubless & Tyre",
+        "Alamat" : "Jalan Tengku Zainal Abidin, Kota Tinggi, Pekanbaru, Riau",
+        "Y" : 101.437485,
+        "X" : 0.53060200000000002,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto14.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 15,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44852600000007,
+          0.52403100000003633
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 15,
+        "No_" : 15,
+        "Nama_Toko" : "Tambal Ban 15",
+        "Alamat" : "Jalan Dahlia No.71, Kedungsari,Sukajadi, Pekanbaru, Riau",
+        "Y" : 101.448526,
+        "X" : 0.52403100000000002,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto15.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 16,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.43351400000006,
+          0.51868900000005169
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 16,
+        "No_" : 16,
+        "Nama_Toko" : "Tambal Ban 16",
+        "Alamat" : "Jalan Meranti, Labuh Baru, Payung Sekaki, Pekanbaru, Riau",
+        "Y" : 101.433514,
+        "X" : 0.51868899999999996,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto16.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 17,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.42875100000003,
+          0.50685900000001993
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 17,
+        "No_" : 17,
+        "Nama_Toko" : "Agung Sedayu Motor",
+        "Alamat" : "Jalan Kuau No.2, Kampung Melayu, Sukajadi, Pekanbaru",
+        "Y" : 101.42875100000001,
+        "X" : 0.50685899999999995,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto17.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 18,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.43851600000005,
+          0.50897500000002083
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 18,
+        "No_" : 18,
+        "Nama_Toko" : "Tambal Ban 18",
+        "Alamat" : "Jalan Tiung Ujung No.42, Labuh Baru, Payung Sekaki, Pekanbaru, Riau",
+        "Y" : 101.43851600000001,
+        "X" : 0.50897499999999996,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto18.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 19,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.42765600000007,
+          0.50995900000003758
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 19,
+        "No_" : 19,
+        "Nama_Toko" : "Tambal Ban 19",
+        "Alamat" : "Jalan Balam Ujung, Kampung Melayu, Sukajadi, Pekanbaru, Riau",
+        "Y" : 101.427656,
+        "X" : 0.50995900000000005,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto19.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 20,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.43759200000005,
+          0.50447200000002113
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 20,
+        "No_" : 20,
+        "Nama_Toko" : "Tambal Ban 20",
+        "Alamat" : "Jalan Belimbing, Wonorejo, Marpoyan Damai, Pekanbaru, Riau",
+        "Y" : 101.437592,
+        "X" : 0.50447200000000003,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto20.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 21,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44017100000008,
+          0.50408100000004197
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 21,
+        "No_" : 21,
+        "Nama_Toko" : "Tambal Ban 21",
+        "Alamat" : "Jalan Nangka, Labuh Baru Timur, Payung Sekaki, Pekanbaru, Riau",
+        "Y" : 101.44017100000001,
+        "X" : 0.504081,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto21.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 22,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.43009100000006,
+          0.50288100000005898
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 22,
+        "No_" : 22,
+        "Nama_Toko" : "Tambal Ban 22",
+        "Alamat" : "Jalan Nangka No.128, Labuh Baru Timur, Payung Sekaki, Pekanbaru, Riau",
+        "Y" : 101.430091,
+        "X" : 0.50288100000000002,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto22.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 23,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.42664300000007,
+          0.49975100000006023
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 23,
+        "No_" : 23,
+        "Nama_Toko" : "Tambal Ban 23",
+        "Alamat" : "Jalan Cendrawasih No.89, Tengkerang Tengah, Marpoyan Damai, Pekanbaru, Riau",
+        "Y" : 101.426643,
+        "X" : 0.499751,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto23.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 24,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44978100000009,
+          0.49581900000003998
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 24,
+        "No_" : 24,
+        "Nama_Toko" : "Tambal Ban 24",
+        "Alamat" : "Jalan Pau, Tengkerang Tengah, Marpoyan Damai, Pekanbaru, Riau",
+        "Y" : 101.449781,
+        "X" : 0.49581900000000001,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto24.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 25,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.43840600000004,
+          0.5785640000000285
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 25,
+        "No_" : 25,
+        "Nama_Toko" : "Tambal ban pak dodi",
+        "Alamat" : "Jalan Umban Sari Atas",
+        "Y" : 101.438406,
+        "X" : 0.57856399999999997,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto25.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 26,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.41776200000004,
+          0.57664900000003172
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 26,
+        "No_" : 26,
+        "Nama_Toko" : "Tambal ban USA",
+        "Alamat" : "Jalan Umban Sari Atas",
+        "Y" : 101.417762,
+        "X" : 0.57664899999999997,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto26.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 27,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.41776000000004,
+          0.58327300000001969
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 27,
+        "No_" : 27,
+        "Nama_Toko" : "Tambal ban depan masjid",
+        "Alamat" : "Jalan Umban Sari Atas",
+        "Y" : 101.41776,
+        "X" : 0.58327300000000004,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto27.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 28,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.41865000000007,
+          0.58569000000005644
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 28,
+        "No_" : 28,
+        "Nama_Toko" : "Tambal ban pak ujang",
+        "Alamat" : "Jalan Barito Sari",
+        "Y" : 101.41865,
+        "X" : 0.58569000000000004,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto28.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 29,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.42323600000009,
+          0.56917200000003731
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 29,
+        "No_" : 29,
+        "Nama_Toko" : "Tambal ban\u00A0 simpang lampu merah",
+        "Alamat" : "Jalan umban sari",
+        "Y" : 101.423236,
+        "X" : 0.56917200000000001,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto29.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 30,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.42956900000007,
+          0.56775200000004133
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 30,
+        "No_" : 30,
+        "Nama_Toko" : "Tambal ban depan kfc",
+        "Alamat" : "Jalan yos sudarso",
+        "Y" : 101.429569,
+        "X" : 0.56775200000000003,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto30.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 31,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.43047800000005,
+          0.56880900000004431
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 31,
+        "No_" : 31,
+        "Nama_Toko" : "Tambal ban simpang",
+        "Alamat" : "Jalan yos sudarso",
+        "Y" : 101.43047799999999,
+        "X" : 0.56880900000000001,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto31.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 32,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.43011900000005,
+          0.56063700000004246
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 32,
+        "No_" : 32,
+        "Nama_Toko" : "Tambal ban depan sd",
+        "Alamat" : "Jalan sekolah",
+        "Y" : 101.430119,
+        "X" : 0.56063700000000005,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto32.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 33,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44462000000004,
+          0.56762400000002344
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 33,
+        "No_" : 33,
+        "Nama_Toko" : "Tambal ban kos oren",
+        "Alamat" : "Jalan rowosari",
+        "Y" : 101.44462,
+        "X" : 0.56762400000000002,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto33.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 34,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.42533400000008,
+          0.56619900000004009
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 34,
+        "No_" : 34,
+        "Nama_Toko" : "Tambal ban smpng sarsem",
+        "Alamat" : "Jalan tegal sari",
+        "Y" : 101.42533400000001,
+        "X" : 0.56619900000000001,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto34.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 35,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.42959400000007,
+          0.53071200000005092
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 35,
+        "No_" : 35,
+        "Nama_Toko" : "Patch Car and Motorcycle Tires Tubless & Tire",
+        "Alamat" : "Kota Tinggi, Pekanbaru, Riau",
+        "Y" : 101.42959399999999,
+        "X" : 0.53071199999999996,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto35.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 36,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.44850200000008,
+          0.55900800000006257
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 36,
+        "No_" : 36,
+        "Nama_Toko" : "Tambal ban simpang",
+        "Alamat" : "Jalan sekolah, yos sudarso",
+        "Y" : 101.448502,
+        "X" : 0.55900799999999995,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto36.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 37,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.43356200000005,
+          0.55451200000004519
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 37,
+        "No_" : 37,
+        "Nama_Toko" : "Tambalban dkt rumah soup",
+        "Alamat" : "Jalan yos sudarso",
+        "Y" : 101.43356199999999,
+        "X" : 0.554512,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto37.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 38,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.43473800000004,
+          0.56942500000002383
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 38,
+        "No_" : 38,
+        "Nama_Toko" : "Tambal ban apj",
+        "Alamat" : "Jalan patria sari",
+        "Y" : 101.434738,
+        "X" : 0.56942499999999996,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto38.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 39,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.42316200000005,
+          0.56978500000002441
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 39,
+        "No_" : 39,
+        "Nama_Toko" : "Tambal ban depan kuburan",
+        "Alamat" : "Jalan kartika sari",
+        "Y" : 101.423162,
+        "X" : 0.56978499999999999,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto39.jpg' width='300'/\u003e"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 40,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          101.42091400000004,
+          0.56851800000004005
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 40,
+        "No_" : 40,
+        "Nama_Toko" : "Tambal ban 40",
+        "Alamat" : "Jalan kartika sari",
+        "Y" : 101.420914,
+        "X" : 0.56851799999999997,
+        "Foto" : "\u003cimg src='E:\\KelompokGIS_TambalBan\\KELOMPOK_GIS\\Foto\\foto40.jpg' width='300'/\u003e"
+      }
+    }
+  ]
+}

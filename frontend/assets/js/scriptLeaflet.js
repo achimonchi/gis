@@ -32,17 +32,31 @@ $(document).ready(async () => {
 
     await make_select2()
 
-    // await make_combobox(kecamatan)
+    await make_search()
 
 })
 
 const make_chekcbox = async (kecamatan) => {
     kecamatan.map((k, i) => {
-        if (k !== "") document.getElementById("kecamatan").innerHTML += `<input type='checkbox' index=${i} class='form-check-input kec' value='${k}' checked disabled />${k} <br/>`
+        if (k !== "") {
+            $("#kecamatan").append(`<input type='checkbox' index=${i} class='form-check-input kec' value='${k}' checked disabled />${k} <br/>`)
+        }
     })
 
     await handle_checkboxAll()
     await handle_checkBox()
+}
+
+const make_search = async () => {
+
+    $("#search").select2({
+        ajax: {
+            type: "POST",
+            url: `http://localhost:4000/coordinates/`,
+            data: kecamatan,
+            dataType: "JSON"
+        }
+    })
 }
 
 const make_select2 = () => {
@@ -57,10 +71,7 @@ const make_select2 = () => {
         border: "0px"
     })
 
-}
-
-
-
+}   
 
 const handle_checkBox = () => {
 
@@ -131,7 +142,6 @@ const get_marker = async () => {
     data.map((d, i) => {
         var coordinates = d.geometry.coordinates
         var properties = d.properties
-        console.log(properties.Foto)
         marker = L.marker([coordinates[1], coordinates[0]]).bindPopup(`<b>${properties.Nama_Toko}</b><br/> <img src='http://localhost:5500/backend/temp_directories/${properties.Foto}' width='100px' /> `).addTo(mymap)
         m.push(marker)
     })
