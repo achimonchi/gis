@@ -4,6 +4,13 @@ const
 const Coordinate = require('./../models/coordinate.models');
 
 
+exports.coordinateList = async (req, res) => {
+    const data = await Coordinate.find()
+
+    return res.status(200).json({
+        data
+    })
+}
 
 exports.coordinateListByKec = async (req, res) => {
     var kec = await req.body['data[]']
@@ -37,23 +44,22 @@ exports.coordinateSearch = async (req, res) => {
     }
 
 
-    var data = []
+    var data = await Coordinate.find({ Nama_Toko: { $in: body } })
 
-    body.map(async (b, i) => {
-        const d = await Coordinate.find({
-            'properties.Nama_Toko': {
-                $regex: new RegExp(b)
-            }
-        })
+    // await body.map(async (b, i) => {
+    //     const d = await Coordinate.find({
+    //         'properties.Nama_Toko': {
+    //             $regex: new RegExp(b)
+    //         }
+    //     })
 
-        await data.push(d)
-    })
+    //     data[i] = d
+    // })
 
     await console.log(data)
 
     await res.status(200).json({
         message: "OK",
-        count: data.length,
         data
     })
 }

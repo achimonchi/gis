@@ -44,15 +44,14 @@ const make_chekcbox = async (kecamatan) => {
 
 const make_search = async () => {
     const data = await $.ajax({
-        type: "POST",
+        type: "GET",
         url: `http://localhost:4000/coordinates/`,
-        data: kecamatan
     })
 
     const name = await data.data
     const nama_toko = await []
 
-    await name.map(n => nama_toko.push(n.properties.Nama_Toko))
+    await name.map(n => nama_toko.push(n.properties.Nama_Toko + ` (${n.kec})`))
 
     console.log(name)
 
@@ -64,14 +63,41 @@ const make_search = async () => {
 
     await $("#search").on("change", async () => {
         var a = await $("#search").val()
-        await search_by_nmae(a)
+        var kec = []
+        await a.map(a => {
+            kec.push(a.split("(")[0].trim())
+        })
+
+        var result = []
+
+        await name.find(e => {
+            kec.find(k => {
+                if (e.properties.Nama_Toko === k) {
+                    result.push(e)
+                }
+            })
+        })
+
+        search_result(result)
+
+
     })
 }
 
-const search_by_nmae = async (arr) => {
-    $.ajax({
-
+const search_result = async (arr) => {
+    m.map(m => {
+        mymap.removeLayer(m)
     })
+
+    var marker;
+
+    arr.map(a => {
+        var coor = a.geometry.coordinates
+        var ket = a.properties
+        marker = L.marker([coor[1], coor[0]]).addTo(mymap)
+        m.push(marker)
+    })
+
 }
 
 const make_select2 = () => {
