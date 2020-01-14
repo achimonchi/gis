@@ -1,0 +1,171 @@
+<div class="card mb-3">
+    <div class="card-body">
+        <div class="row mb-3">
+            <div class="col-md">
+                <h3>Peta Pesebaran Bengkel di Pekanbaru</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="mapid"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="alert alert-primary">
+                    <div class="row mb-3">
+                        <div class="col-md">
+                            <label for="search">Cari Lokasi</label>
+                            <select name="places" multiple="multiple" id="search" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <Label>Kecamatan</Label>
+                            <div class="form-check">
+                                <input type="checkbox" checked class="form-check-input kec-all" id="kec-all"
+                                    value="all">All
+                                <br>
+                                <div id="kecamatan">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="form-add" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md">
+                            <h3>Form Input Data</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="x">X</label>
+                            <input type="text" id="x" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="y">Y</label>
+                            <input type="text" id="y" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="name">Nama Toko</label>
+                            <input type="text" id="nama" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="alamat">Alamat Toko</label>
+                            <input type="text" id="alamat" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="district">Kecamatan</label>
+                            <select name="kecamatan" class="form-control input-lg" id="district">
+                            </select>
+                            <!-- <input type="type" class="form-control" id="district" name="kecamatan"> -->
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="foto">Foto</label>
+                            <br>
+                            <input type="file" id="foto" name="temp_foto">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <img src="" id="imgPreview" alt="" height="200px">
+                        </div>
+                        <div class="col-md">
+                            <input id="btn-submit" type="button" value="Kirim" class="btn btn-block btn-primary">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h3>Table Data</h3>
+                <div class="row">
+                    <div class="col-md">
+                        <table class="table table-hover table-striped">
+                            <tr>
+                                <th>Nama</th>
+                                <th>Alamat</th>
+                                <th>Kecamatan</th>
+                                <th>Foto</th>
+                                <th>Action</th>
+                            </tr>
+                            <div id="value-map">
+
+                            </div id="value-map">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h3>Update Table</h3>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label for="x">X</label>
+                        <input type="text" id="x" class="form-control">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="y">Y</label>
+                        <input type="text" id="y" class="form-control">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="name">Nama Toko</label>
+                        <input type="text" id="nama" class="form-control">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="alamat">Alamat Toko</label>
+                        <input type="text" id="alamat" class="form-control">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="district">Kecamatan</label>
+                        <select name="kecamatan" class="form-control input-lg" id="district">
+                        </select>
+                    </div>
+                    <div class="col-md">
+                        <input id="btn-submit" type="button" value="Kirim" class="btn btn-block btn-update">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/scriptLeaflet.js"></script>
+<script src="../assets/js/table_data.js"></script>
+
+<script>
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imgPreview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#foto").change(function () {
+        readURL(this);
+    });
+</script>

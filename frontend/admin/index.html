@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+    <!-- <script id="leaflet"></script> -->
+
+    <style>
+        #mapid {
+            height: 400px;
+        }
+
+        .leaflet-popup-content-wrapper {
+            width: auto;
+        }
+
+        .icon {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #f6781c;
+            border-radius: 5px;
+            transition: .3s ease-in-out;
+        }
+
+
+
+        .icon.active {
+            background: #f6781c;
+        }
+
+        .icon:hover {
+            cursor: pointer;
+            box-shadow: 0px 5px 10px rgba(207, 97, 19, 0.5);
+            border: 1px solid transparent;
+        }
+
+        .icon.active .icon-nav {
+            color: white;
+
+        }
+
+        .icon-nav {
+            color: #f6781c;
+            font-size: 18pt;
+        }
+
+        .icon label {
+            color: #f6781c;
+
+        }
+
+        .icon.icon.active label {
+            color: white;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .btn-update {
+            background: #f6781c;
+            color: white;
+            border: 1px solid #f6781c;
+        }
+
+        .btn-update:hover {
+            background: white;
+            color: #f6781c;
+            border: 1px solid #f6781c;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background: rgba(246, 119, 28, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="side-panel">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <a href="?home" data="home">
+                                            <div class="icon active dashboard" data="home">
+                                                <i class="icon-nav fas fa-home"></i>
+                                                <br>
+                                                <label for="">Dashboard</label>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <a href="?map" data="map">
+                                            <div class="icon map" data="map">
+                                                <i class="icon-nav fas fa-map"></i>
+                                                <br>
+                                                <label for="">Map</label>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+
+
+        var url = window.location.href.split("?")[1]
+
+        $(document).ready(() => {
+            check_url_load()
+        })
+
+        const check_url_load = () => {
+            if (url === "map") {
+                $(".icon").removeClass("active")
+                $(".map").addClass("active")
+                add_content("contents/map.html")
+                document.title = "Map | Admin"
+            }
+            else {
+                $(".icon").removeClass("active")
+                $(".dashboard").addClass("active")
+                document.title = "Map | Admin"
+                add_content("contents/dashboard.html")
+            }
+        }
+
+        const add_content = content => {
+            $(".content").load(content)
+        }
+
+    </script>
+</body>
+
+
+
+</html>

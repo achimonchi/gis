@@ -48,15 +48,61 @@ const make_chekcbox = async (kecamatan) => {
 }
 
 const make_search = async () => {
-
-    $("#search").select2({
-        ajax: {
-            type: "POST",
-            url: `http://localhost:4000/coordinates/`,
-            data: kecamatan,
-            dataType: "JSON"
-        }
+    const data = await $.ajax({
+        type: "GET",
+        url: `http://localhost:4000/coordinates/`,
     })
+
+    const name = await data.data
+    const nama_toko = await []
+
+    await name.map(n => nama_toko.push(n.properties.Nama_Toko + ` (${n.kec})`))
+
+    console.log(name)
+
+    await $("#search").select2({
+        placeholder: "Cari Nama Toko",
+        data: nama_toko,
+        allowClear: true
+    })
+
+    await $("#search").on("change", async () => {
+        var a = await $("#search").val()
+        var kec = []
+        await a.map(a => {
+            kec.push(a.split("(")[0].trim())
+        })
+
+        var result = []
+
+        await name.find(e => {
+            kec.find(k => {
+                if (e.properties.Nama_Toko === k) {
+                    result.push(e)
+                }
+            })
+        })
+
+        search_result(result)
+
+
+    })
+}
+
+const search_result = async (arr) => {
+    m.map(m => {
+        mymap.removeLayer(m)
+    })
+
+    var marker;
+
+    arr.map(a => {
+        var coor = a.geometry.coordinates
+        var ket = a.properties
+        marker = L.marker([coor[1], coor[0]]).addTo(mymap)
+        m.push(marker)
+    })
+
 }
 
 const make_select2 = () => {
