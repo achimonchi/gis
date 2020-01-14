@@ -71,7 +71,7 @@ const make_select2 = () => {
         border: "0px"
     })
 
-}   
+}
 
 const handle_checkBox = () => {
 
