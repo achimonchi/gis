@@ -152,7 +152,8 @@ const get_data_kec = () => {
 const handle_checkboxAll = () => {
     $("#kec-all").click(function () {
         if (this.checked) {
-            $(".kec").attr("disabled", true)
+            
+            kec").attr("disabled", true)
             val = kecamatan
         }
         else {
