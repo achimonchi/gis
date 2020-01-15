@@ -101,3 +101,14 @@ exports.coordinateAdd = async (req, res) => {
         })
     }
 }
+
+
+exports.coordinateUpdate = async (req, res) => {
+    const body = await req.body;
+    const file = await req.file;
+
+    return res.status(200).json({
+        body, file
+    })
+
+}

@@ -30,11 +30,17 @@ $(document).ready(async () => {
     await handle_on_click()
     await submit()
 
-    await make_select2()
+    await make_select2("district")
 
     await make_search()
+    addClassSelect2()
+
 
 })
+
+const addClassSelect2 = () => {
+
+}
 
 const make_chekcbox = async (kecamatan) => {
     kecamatan.map((k, i) => {
@@ -58,7 +64,7 @@ const make_search = async () => {
 
     await name.map(n => nama_toko.push(n.properties.Nama_Toko + ` (${n.kec})`))
 
-    console.log(name)
+    // console.log(name)
 
     await $("#search").select2({
         placeholder: "Cari Nama Toko",
@@ -66,7 +72,7 @@ const make_search = async () => {
         allowClear: true
     })
 
-    await $("#search").on("change", async () => {
+    await $("#search").on("change", async (e) => {
         var a = await $("#search").val()
         var kec = []
         await a.map(a => {
@@ -105,8 +111,9 @@ const search_result = async (arr) => {
 
 }
 
-const make_select2 = () => {
-    $("#district").select2({
+const make_select2 = (id) => {
+    console.log(id)
+    $(`#${id}`).select2({
         placeholder: "Select a state",
         allowClear: true,
         data: kecamatan
@@ -116,6 +123,8 @@ const make_select2 = () => {
     $(".select2-selection").css({
         border: "0px"
     })
+
+
 
 }
 
