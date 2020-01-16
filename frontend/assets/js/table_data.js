@@ -1,5 +1,21 @@
 var data = []
 
+var kecamatan = [
+    "",
+    "Bukit Raya",
+    "Lima Puluh",
+    "Marpoyan Damai",
+    "Payung Sekaki",
+    "Pekanbaru Kota",
+    "Rumbai",
+    "Rumbai Pesisir",
+    "Sail",
+    "Senapelan",
+    "Sukajadi",
+    "Tampan",
+    "Tenayan Raya"
+]
+
 $(document).ready(() => {
     main()
 })
@@ -8,6 +24,19 @@ const main = async () => {
     await get_data()
     await make_table()
     await make_edit()
+    await get_all_data()
+    await search_table()
+}
+
+const search_table = async () => {
+    $("#searchTable").keyup((e) => {
+        
+        console.log(e.target.value)
+    })
+}
+
+const get_all_data = async () => {
+    $("#marker").html(data.length)
 }
 
 const get_data = async () => {
@@ -73,6 +102,7 @@ const delete_coordinate = async (id) => {
         url: "http://localhost:4000/coordinates/delete/" + id,
         success: () => {
             alert("Delete Success !")
+            window.location.reload()
         },
         error: (err) => {
             console.log(err)
@@ -104,7 +134,8 @@ const patch_data = async (foto) => {
                 foto
             },
             success: res => {
-                alert("Tambah Marker Berhasil !")
+                alert("Ubah Data Marker Berhasil !")
+                window.location.reload()
             }
         })
 
@@ -113,4 +144,3 @@ const patch_data = async (foto) => {
     })
 
 }
-
