@@ -30,7 +30,9 @@ const main = async () => {
 
 const search_table = async () => {
     $("#searchTable").keyup((e) => {
-        
+        data.map(d => {
+            console.log(d)
+        })
         console.log(e.target.value)
     })
 }

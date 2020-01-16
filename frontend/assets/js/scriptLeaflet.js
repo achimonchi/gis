@@ -105,7 +105,8 @@ const search_result = async (arr) => {
     arr.map(a => {
         var coor = a.geometry.coordinates
         var ket = a.properties
-        marker = L.marker([coor[1], coor[0]]).addTo(mymap)
+
+        marker = L.marker([coor[1], coor[0]]).bindPopup(`<b>${ket.Nama_Toko}</b><br/> <img src='http://localhost:5500/backend/temp_directories/${ket.Foto}' width='100px' /> `).addTo(mymap)
         m.push(marker)
     })
 
