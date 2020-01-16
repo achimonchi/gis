@@ -265,7 +265,7 @@ const submit = () => {
             await formData.append("nama", data.nama)
             await formData.append("alamat", data.alamat)
             await formData.append("kec", data.kec)
-            // await console.log(formData)
+            await console.log(formData)
 
             await $.ajax({
                 type: "POST",

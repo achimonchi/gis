@@ -8,7 +8,8 @@ const {
     coordinateAdd,
     coordinateSearch,
     coordinateList,
-    coordinateUpdate
+    coordinateUpdate,
+    deleteCoordinate
 } = require('./../controllers/coordinate.controllers')
 
 const router = express.Router();
@@ -27,8 +28,8 @@ router.get('/', coordinateList)
 router.post('/', coordinateListByKec)
 router.post('/search', coordinateSearch)
 router.post('/add', upload.single("foto"), coordinateAdd)
-router.put('/update', coordinateUpdate)
-router.put('/update/foto', upload.single("foto"), coordinateUpdate)
 
+router.patch('/update/:id', coordinateUpdate)
+router.delete('/delete/:id', deleteCoordinate)
 
 module.exports = router;

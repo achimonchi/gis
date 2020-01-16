@@ -130,6 +130,7 @@
             <form id="form-update" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="row">
+                        <input type="text" id="edit_id" hidden>
                         <div class="col-md-6 mb-3">
                             <label for="x">X</label>
                             <input type="text" id="edit_x" class="form-control">
@@ -152,17 +153,6 @@
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="foto">Foto</label>
-                            <br>
-                            <input type="file" id="edit_foto" name="edit_temp_foto">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="">Gambar Sebelumnya</label>
-                            <img src="" id="edit_imgPreview" alt="" height="100px">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="">Gambar Sesudah</label>
-                            <img src="" id="edit_imgSudahPreview" alt="" height="200px">
                         </div>
                     </div>
                 </div>

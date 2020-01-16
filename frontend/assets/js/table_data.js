@@ -20,6 +20,7 @@ const get_data = async () => {
 }
 
 const make_table = async () => {
+
     data.map((d, i) => {
         var text = `
             <tr id='${i}'>
@@ -33,7 +34,7 @@ const make_table = async () => {
                     <button type='button' data-toggle="modal" data-target="#exampleModal" class='btn btn-sm btn-update btn-delete'>
                         <i class='fas fa-edit'/>
                     </button>
-                    <button class='btn btn-sm btn-danger btn-delete'>
+                    <button class='btn btn-sm btn-danger btn-delete' id='${d._id}'>
                         <i class='fas fa-trash'/>
                     </button>
                 </td>
@@ -41,6 +42,10 @@ const make_table = async () => {
         `
 
         $("#value").append(text)
+    })
+
+    await $(".btn-delete").on("click", (e) => {
+        delete_coordinate(e.currentTarget.id)
     })
 }
 
@@ -53,34 +58,58 @@ const make_edit = async () => {
 
 const edit_form = async (id) => {
     var d = await data[id]
+    $("#edit_id").val(d._id)
     $("#edit_x").val(d.geometry.coordinates[0])
     $("#edit_y").val(d.geometry.coordinates[1])
     $("#edit_nama").val(d.properties.Nama_Toko)
     $("#edit_alamat").val(d.properties.Alamat)
     make_select2("edit_district")
-    $("#edit_imgPreview").attr("src", `http://localhost:5500/backend/temp_directories/${d.properties.Foto}`)
+    patch_data(d.properties.Foto)
+}
 
-    patch_data()
+const delete_coordinate = async (id) => {
+    await $.ajax({
+        type: "delete",
+        url: "http://localhost:4000/coordinates/delete/" + id,
+        success: () => {
+            alert("Delete Success !")
+        },
+        error: (err) => {
+            console.log(err)
+        }
+    })
 }
 
 
-const patch_data = async () => {
-    $("#update").on("click", () => {
-        var x = $("#edit_x").val()
-        var y = $("#edit_y").val()
-        var nama = $("#edit_nama").val()
-        var alamat = $("#edit_alamat").val()
-        var foto = $("#edit_foto").val()
+const patch_data = async (foto) => {
+    await $("#update").on("click", async () => {
+        var x = await $("#edit_x").val()
+        var y = await $("#edit_y").val()
+        var nama = await $("#edit_nama").val()
+        var alamat = await $("#edit_alamat").val()
+        var kec = await $("#edit_district").val()
+        var id = await $("#edit_id").val()
 
-        if (foto) {
-            console.log("ADa Foto")
-        }
-        else {
-            console.log("Tidak Ada Foto")
-        }
+        console.log(foto)
+
+        await $.ajax({
+            type: "PATCH",
+            url: "http://localhost:4000/coordinates/update/" + id,
+            data: {
+                x,
+                y,
+                nama,
+                alamat,
+                kec,
+                foto
+            },
+            success: res => {
+                alert("Tambah Marker Berhasil !")
+            }
+        })
 
 
-        console.log(alamat)
+        // console.log(alamat)
     })
 
 }

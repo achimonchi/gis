@@ -12,7 +12,6 @@ const
 const
     coordinateRoutes = require('./api/routes/coordinate.routes')
 
-
 // ===============================================================================
 // ======================[USE MODULE FOR STARTED]=================================
 
@@ -21,6 +20,7 @@ app.use(morgan('dev'));
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+// app.use(upload.array())
 
 
 

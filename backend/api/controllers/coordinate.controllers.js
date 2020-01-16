@@ -104,11 +104,43 @@ exports.coordinateAdd = async (req, res) => {
 
 
 exports.coordinateUpdate = async (req, res) => {
-    const body = await req.body;
-    const file = await req.file;
+    try {
+        const body = await req.body;
 
-    return res.status(200).json({
-        body, file
+        const updateCoordinate = {
+            geometry: {
+                coordinates: [parseFloat(body.x), parseFloat(body.y)]
+            },
+            kec: body.kec,
+            properties: {
+                Nama_Toko: body.nama.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); }),
+                Alamat: body.alamat,
+                X: parseFloat(body.x),
+                Y: parseFloat(body.y),
+                Foto: body.foto
+            }
+        }
+
+        await Coordinate.findOneAndUpdate({ _id: req.params.id }, updateCoordinate)
+
+        return res.status(201).json({
+            message: "Created new Coordinates success !",
+            body,
+            updateCoordinate
+        })
+    }
+    catch (err) {
+        return res.status(500).json({
+            err
+        })
+    }
+
+}
+
+exports.deleteCoordinate = async (req, res) => {
+    const id = req.params.id
+    await Coordinate.findByIdAndDelete(id)
+    res.status(200).json({
+        message: "Berhasil Delete Data"
     })
-
 }
